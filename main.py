@@ -13,9 +13,12 @@ async def on_ready():
 
 @bot.command(name="say")
 async def say(ctx):
+    # إضافة المنشن في بداية الـ description بشكل عريض
+    description_text = "**📢 تنبيه هام: @everyone | @here**\n\nأهلاً بك في سيرفرنا! نحن نضمن بيئة آمنة وممتعة للجميع.\nيرجى قراءة القوانين التالية بعناية لضمان تجربة مميزة."
+    
     embed = discord.Embed(
         title="🛡️ نظام وقوانين السيرفر",
-        description="أهلاً بك في سيرفرنا! نحن نضمن بيئة آمنة وممتعة للجميع.\nيرجى قراءة القوانين التالية بعناية لضمان تجربة مميزة.",
+        description=description_text,
         color=discord.Color.from_rgb(47, 49, 54)
     )
     
@@ -32,5 +35,5 @@ async def say(ctx):
     await ctx.message.delete()
     await ctx.send(embed=embed)
 
-# استخدام متغير البيئة (للأمان والاحترافية)
+# تأكد أن اسم المتغير في موقع الاستضافة هو TOKEN
 bot.run(os.environ['TOKEN'])
