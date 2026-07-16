@@ -1,4 +1,5 @@
 import discord
+import os
 from discord import app_commands
 from discord.ext import commands
 
@@ -37,4 +38,4 @@ async def say(interaction: discord.Interaction):
     await interaction.response.send_message(embed=embed)
 
 # ضع التوكن هنا
-bot.run('TOKEN')
+bot.run(os.environ['TOKEN'])
