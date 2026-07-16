@@ -33,4 +33,4 @@ async def say(ctx):
     await ctx.send(embed=embed)
 
 # استخدام متغير البيئة (للأمان والاحترافية)
-bot.run(os.environ['DISCORD_TOKEN'])
+bot.run(os.environ['TOKEN'])
